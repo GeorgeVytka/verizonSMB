@@ -1,0 +1,12 @@
+button {
+  background-color: #ff3b30; /* Apple-style red */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #cc3228;
+}
