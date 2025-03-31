@@ -1,0 +1,1 @@
+body,html{margin:0;padding:0}*{font-family:Inter,sans-serif}body{background-color:#e6e6e6}.container{display:flex;margin-top:2%;justify-content:center;align-items:center;gap:25px}@media (max-width: 600px){.container{flex-direction:column}}
