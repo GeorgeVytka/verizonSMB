@@ -41,9 +41,13 @@ export const counterSlice = createSlice({
       const item = action.payload.item;
       state[item] = !state[item];
     },
+
+    clearData:(state)=>{
+      Object.assign(state, initialState);
+    }
   },
 });
 
-export const { increment, decrement, setQuantity, toggleCheckbox } =
+export const { increment, decrement, setQuantity, toggleCheckbox,clearData } =
   counterSlice.actions;
 export default counterSlice.reducer;

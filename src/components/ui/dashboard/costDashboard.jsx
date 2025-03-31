@@ -2,7 +2,8 @@ import React from "react";
 import { Chart as ChartJs, Tooltip, Legend, ArcElement } from "chart.js";
 import { DASH_BACKGROUND } from "../../../ults/themes/colors";
 import { Doughnut } from "react-chartjs-2";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import{ clearData} from "../../../features/counter/counterSlice";
 import styles from "./costDashboard.module.css";
 import { useEffect, useState } from "react";
 
@@ -25,6 +26,7 @@ const CostDashboard = () => {
 
   // Update state when Redux values change
 
+    const dispatch = useDispatch();
   const [stateValues, setStateValues] = useState({
     start5G: 0,
     plus5G: 0,
@@ -235,6 +237,10 @@ const CostDashboard = () => {
       clculateVBiz()*/
   };
 
+
+  const cleatInput = () =>{
+    dispatch(clearData());
+  }
   return (
     <div
       style={{
@@ -333,8 +339,8 @@ const CostDashboard = () => {
       </div>
 
       <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
-        <button onClick={handleCalculatingTotal}>Calculate</button>
-        <button>Clear Inputs</button>
+       
+        <button onClick={cleatInput}>Clear Inputs</button>
       </div>
     </div>
   );
